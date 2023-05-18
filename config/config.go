@@ -5,6 +5,7 @@ const (
 	AccessToken = "access_token"
 	PrivateKey  = "private_key"
 	LicenseKey  = "license_key"
+	ClientId    = "ClientId"
 )
 
 type Context struct {
@@ -12,4 +13,5 @@ type Context struct {
 	AccessToken string
 	PrivateKey  string
 	LicenseKey  string
+	ClientId    string
 }

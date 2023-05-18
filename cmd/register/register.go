@@ -1,4 +1,4 @@
-package register
+﻿package register
 
 import (
 	"fmt"
@@ -53,11 +53,13 @@ func registerAccount() error {
 	if err != nil {
 		return err
 	}
-
+	//fmt.Printf("%+v", device.Config.ClientId)
+	fmt.Printf("%+v", device.Config.Peers)
 	viper.Set(config.PrivateKey, privateKey.String())
 	viper.Set(config.DeviceId, device.Id)
 	viper.Set(config.AccessToken, device.Token)
 	viper.Set(config.LicenseKey, device.Account.License)
+	viper.Set(config.ClientId, device.Config.ClientId)
 	if err := viper.WriteConfig(); err != nil {
 		return err
 	}
